@@ -1,1 +1,1 @@
-# MMC IT CLUB website
+# MMC IT Club, Makawanpur Multiple Campus
