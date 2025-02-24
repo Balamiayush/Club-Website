@@ -5,7 +5,7 @@ const App = () => {
   
   return (
 
-    <div className='w-full bg-[#fff]'>
+    <div className='w-full bg-[#fff] px-4 h-[500vh] lg:px-10 '>
       <Hero/>
     </div>
     
