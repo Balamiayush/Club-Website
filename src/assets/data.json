@@ -1,0 +1,47 @@
+[
+  {
+    "id": "01",
+    "name": "Christina Khatiwada",
+    "position": "President"
+  },
+  {
+    "id": "02",
+    "name": "Diya Shrestha",
+    "position": "VP"
+  },
+  {
+    "id": "03",
+    "name": "Aaryaman Adhikari",
+    "position": "Co-Secretary"
+  },
+  {
+    "id": "04",
+    "name": "Prajwol Adhikari",
+    "position": "Co-Secretary"
+  },
+  {
+    "id": "05",
+    "name": "Ishwor Sapkota",
+    "position": "Treasurer"
+  },
+  {
+    "id": "06",
+    "name": "Diwakar Phuyal",
+    "position": "Member"
+  },
+  {
+    "id": "07",
+    "name": "Pratik Timalsina",
+    "position": "Member"
+  },
+  {
+    "id": "08",
+    "name": "Shikshya Mainali",
+    "position": "Member"
+  },
+  {
+    "id": "09",
+    "name": "Ishwor Sapkota",
+    "position": "Member"
+  }
+]

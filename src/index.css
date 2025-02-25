@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
 *{
-    font-family: "Inter", serif;
+    font-family: "Inter", serif;   
+}
+@keyframes marquee {
+    0% { transform: translateX(0%); }
+    50% { transform: translateX(-20%); }
+    100% { transform: translateX(-30%); }
     
+}
+.texts{
+    animation: marquee 10s linear infinite;
 }
