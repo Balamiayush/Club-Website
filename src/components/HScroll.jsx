@@ -58,17 +58,7 @@ const HScroll = () => {
             <span className="text-[#A071FF] rounded-2xl px-4 py-2 mx-4 transition-all duration-300 hover:bg-[#f0eaff] inline-block">Join</span> 
             <span>us on a journey of innovation, collaboration, and growth</span>
           </div>
-          
-          {/* Additional content to make scrolling more meaningful */}
-          <div className="ml-32 text-[6rem] sm:text-[3rem] md:text-[5rem] lg:text-[8rem] font-semibold whitespace-nowrap">
-            <span className="text-[#6a4cb3] rounded-2xl px-4 py-2 mx-4 transition-all duration-300 hover:bg-[#f0eaff] inline-block">Explore</span> 
-            <span>the future of interactive experiences</span>
-          </div>
-          
-          <div className="ml-32 text-[6rem] sm:text-[3rem] md:text-[5rem] lg:text-[8rem] font-semibold whitespace-nowrap">
-            <span className="text-[#8a52dd] rounded-2xl px-4 py-2 mx-4 transition-all duration-300 hover:bg-[#f0eaff] inline-block">Create</span> 
-            <span>meaningful connections through technology</span>
-          </div>
+
         </div>
       </div>
     </div>
