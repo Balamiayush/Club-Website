@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
-const Loading = ({ setLoading }) => {
+const Loading = () => {
   const [text, setText] = useState([
     ". नमस्ते",
     ".hello",
@@ -15,52 +15,7 @@ const Loading = ({ setLoading }) => {
   ]);
   const [currentText, setCurrentText] = useState(0);
   const [completedCycles, setCompletedCycles] = useState(0);
-
-  // Function to disable all scrolling
-  const disableScroll = () => {
-    // Get the current scroll position
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-    
-    // Lock the scroll position
-    document.body.style.overflow = 'hidden';
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${scrollTop}px`;
-    document.body.style.width = '100%';
-    
-    // Prevent touchmove events
-    document.addEventListener('touchmove', preventDefault, { passive: false });
-    // Prevent wheel events
-    document.addEventListener('wheel', preventDefault, { passive: false });
-  }
-  
-  // Function to prevent default for events
-  const preventDefault = (e) => {
-    e.preventDefault();
-  }
-
-  // Function to re-enable scrolling
-  const enableScroll = () => {
-    // Get the current scroll position from body's top property
-    const scrollY = document.body.style.top ? parseInt(document.body.style.top || '0') * -1 : 0;
-    
-    // Reset body styles
-    document.body.style.overflow = '';
-    document.body.style.position = '';
-    document.body.style.top = '';
-    document.body.style.width = '';
-    
-    // Restore scroll position
-    window.scrollTo(0, scrollY);
-    
-    // Remove event listeners
-    document.removeEventListener('touchmove', preventDefault);
-    document.removeEventListener('wheel', preventDefault);
-  }
-
   useEffect(() => {
-    // Disable all scrolling
-    disableScroll();
     
     const interval = setInterval(() => {
       setCurrentText((prevText) => {
@@ -74,8 +29,6 @@ const Loading = ({ setLoading }) => {
 
     return () => {
       clearInterval(interval);
-      // Re-enable scrolling when component unmounts
-      enableScroll();
     };
   }, []);
 
@@ -87,10 +40,6 @@ const Loading = ({ setLoading }) => {
         duration: 1,
         ease: "power1.out",
         onComplete: () => {
-          // Re-enable scrolling after animation completes
-          enableScroll();
-          
-          // Remove the element from DOM after animation
           const loadingElement = document.querySelector(".loading");
           if (loadingElement) {
             loadingElement.style.display = "none";

@@ -31,7 +31,7 @@ const Ourteam = () => {
     gsap.to(circle, {
       scale: 1,
       opacity: 0.9,
-      duration: 0.4,
+      duration: 0.5,
       ease: "power2.out",
     });
 
@@ -39,13 +39,13 @@ const Ourteam = () => {
     gsap.to(member.querySelector(".member-name"), {
       color: "#A071FF",
       x: 5,
-      duration: 0.3,
+      duration: 0.5,
       ease: "power2.out",
     });
 
     gsap.to(member.querySelector(".member-position"), {
       fontWeight: "600",
-      duration: 0.3,
+      duration: 0.5,
       ease: "power2.out",
     });
   };
@@ -60,7 +60,7 @@ const Ourteam = () => {
       gsap.to(circle, {
         x: x - circle.offsetWidth / 2,
         y: y - circle.offsetHeight / 2,
-        duration: 0.1,
+        duration: 0.5,
         ease: "power2.out",
       });
     }
