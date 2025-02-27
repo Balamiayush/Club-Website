@@ -4,14 +4,15 @@ import { useGSAP } from '@gsap/react';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
 const HScroll = () => {
-  // Register GSAP plugins
+
   gsap.registerPlugin(ScrollTrigger);
   
-  // Create refs
+
   const containerRef = useRef(null);
   const racesRef = useRef(null);
   
   const getScrollAmount = () => {
+    
     if (!racesRef.current) return 0;
     
     const racesWidth = racesRef.current.scrollWidth;
@@ -26,10 +27,10 @@ const HScroll = () => {
         ease: "none",
       });
       
-      // Set up the ScrollTrigger
+ 
       ScrollTrigger.create({
         trigger: containerRef.current,
-        start: "top top", // Changed to top top
+        start: "top top", 
         end: () => `+=${getScrollAmount() * -1}`,
         pin: true,
         pinSpacing: true,
@@ -38,8 +39,7 @@ const HScroll = () => {
         invalidateOnRefresh: true,
       });
     });
-    
-    // Clean up on unmount
+  
     return () => ctx.revert();
   }, []);
   

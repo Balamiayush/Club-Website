@@ -18,7 +18,7 @@ const cardVariants = {
 const Card = ({ icon, title, description, index }) => {
   return (
     <motion.div
-      className="bg-white border border-black rounded-xl shadow-sm p-6 w-[300px] h-[220px] flex flex-col items-start justify-center text-left transition-all duration-100 hover:shadow-lg"
+      className="bg-white border border-black rounded-xl shadow-sm p-6 w-[300px] h-[220px] flex flex-col items-start justify-center text-left  hover:shadow-lg"
       variants={cardVariants}
       initial="hidden"
       whileInView="visible"

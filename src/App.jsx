@@ -11,7 +11,7 @@ import Page5 from "./pages/Page5";
 import FAQ from "./pages/FAQ";
 import SocialLinksSection from "./pages/SocialLinksSection";
 import Footer from "./pages/Footer";
-import Loading from "./components/Loading";
+// import Loading from "./components/Loading";
 
 const App = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -31,7 +31,7 @@ gsap.ticker.lagSmoothing(0);
   },[])
   return (
     <>
-      <Loading />
+      {/* <Loading /> */}
       <div className="w-full bg-[#fff] main z-[10] overflow-x-hidden relative">
         <Hero />
         <Page2 />

@@ -23,6 +23,7 @@
     "react-redux": "^9.2.0",
     "react-toastify": "^11.0.3",
     "redux": "^5.0.1",
+    "split-text": "^1.0.0",
     "split-type": "^0.3.4",
     "tailwindcss": "^4.0.9"
   },
