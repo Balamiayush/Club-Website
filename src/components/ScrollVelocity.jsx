@@ -10,6 +10,7 @@ import {
 } from "framer-motion";
 
 function useElementWidth(ref) {
+  
   const [width, setWidth] = useState(0);
 
   useLayoutEffect(() => {
@@ -40,7 +41,7 @@ export const ScrollVelocity = ({
   parallaxStyle,
   scrollerStyle,
 }) => {
-  function VelocityText({
+  const VelocityText = ({
     children,
     baseVelocity = velocity,
     scrollContainerRef,
@@ -53,7 +54,7 @@ export const ScrollVelocity = ({
     scrollerClassName,
     parallaxStyle,
     scrollerStyle,
-  }) {
+  }) => {
     const baseX = useMotionValue(0);
     const scrollOptions = scrollContainerRef
       ? { container: scrollContainerRef }
@@ -74,11 +75,11 @@ export const ScrollVelocity = ({
     const copyRef = useRef(null);
     const copyWidth = useElementWidth(copyRef);
 
-    function wrap(min, max, v) {
+    const wrap = (min, max, v) => {
       const range = max - min;
       const mod = (((v - min) % range) + range) % range;
       return mod + min;
-    }
+    };
 
     const x = useTransform(baseX, (v) => {
       if (copyWidth === 0) return "0px";
@@ -113,6 +114,7 @@ export const ScrollVelocity = ({
     }
 
     return (
+      
       <div
         className={`${parallaxClassName} relative overflow-hidden`}
         style={parallaxStyle}
@@ -125,7 +127,7 @@ export const ScrollVelocity = ({
         </motion.div>
       </div>
     );
-  }
+  };
 
   return (
     <section>

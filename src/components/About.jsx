@@ -1,18 +1,125 @@
-import React from 'react'
+import React, { useEffect, useRef, useMemo } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-const About = ({title,description}) => {
+gsap.registerPlugin(ScrollTrigger);
+
+const ScrollReveal = ({
+  children,
+  scrollContainerRef,
+  enableBlur = true,
+  baseOpacity = 0.2,
+  baseRotation = 0.5,
+  blurStrength = 4,
+  containerClassName = "",
+  textClassName = "",
+  rotationEnd = "bottom bottom",
+  wordAnimationEnd = "bottom bottom"
+}) => {
+  const containerRef = useRef(null);
+
+  const splitText = useMemo(() => {
+    const text = typeof children === 'string' ? children : '';
+    return text.split(/(\s+)/).map((word, index) => {
+      if (word.match(/^\s+$/)) return word;
+      return (
+        <span className="inline-block" key={index}>
+          {word}
+        </span>
+      );
+    });
+  }, [children]);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    const scroller =
+      scrollContainerRef && scrollContainerRef.current
+        ? scrollContainerRef.current
+        : window;
+
+    gsap.fromTo(
+      el,
+      { transformOrigin: '0% 50%', rotate: baseRotation },
+      {
+        ease: 'none',
+        rotate: 0,
+        scrollTrigger: {
+          trigger: el,
+          scroller,
+          start: 'top bottom',
+          end: rotationEnd,
+          scrub: true,
+        },
+      }
+    );
+
+    const wordElements = el.querySelectorAll('.inline-block');
+
+    gsap.fromTo(
+      wordElements,
+      { opacity: baseOpacity, willChange: 'opacity' },
+      {
+        ease: 'none',
+        opacity: 1,
+        stagger: 0.05,
+        scrollTrigger: {
+          trigger: el,
+          scroller,
+          start: 'top bottom-=20%',
+          end: wordAnimationEnd,
+          scrub: true,
+        },
+      }
+    );
+
+    if (enableBlur) {
+      gsap.fromTo(
+        wordElements,
+        { filter: `blur(${blurStrength}px)` },
+        {
+          ease: 'none',
+          filter: 'blur(0px)',
+          stagger: 0.10,
+          scrollTrigger: {
+            trigger: el,
+            scroller,
+            start: 'top bottom-=20%',
+            end: wordAnimationEnd,
+            scrub: true,
+          },
+        }
+      );
+    }
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, [scrollContainerRef, enableBlur, baseRotation, baseOpacity, rotationEnd, wordAnimationEnd, blurStrength]);
+
   return (
-  
-    <div className='w-full lg:h-[60vh] flex flex-col justify-center  px-4 lg:px-10 '>
-    <p className='text-[#A071FF]  text-[1rem] lg:text-[2.1rem] font-semibold leading-none '>{title}</p>
-    <div className='    flex   flex-col lg:py-5  '>
-    <div style={{fontFamily:'gilroyRegular'}} className=' text-[1rem] lg:text-[2rem] font-semibold leading-[1.2] '>
-    {description}
-    </div>
-    </div>
-    </div>
+    <h2 ref={containerRef} className={`my-2 ${containerClassName} text-center`}>
+      <p className={`text-[clamp(1.6rem,4vw,1rem)] lg:text-[2rem]  leading-[1.5] font-semibold ${textClassName}`}>{splitText}</p>
+    </h2>
+  );
+};
 
-  )
-}
+const About = ({ title, description }) => {
+  return (
+    <div className='w-full lg:h-[60vh]  px-4 lg:px-10 '>
+      <ScrollReveal textClassName='text-[#A071FF]  p-5 lg:w-70 rounded-lg  text-[0.1rem] lg:text-[2.1rem] font-semibold leading-none bg-[#EEE8FA]'>
+          {title}
+      </ScrollReveal>
+      <div style={{
+        fontFamily:"gilroyMedium"
+      }} className='flex flex-col'>
+        <ScrollReveal  textClassName='leading-[1.2]'>
+          {description}
+        </ScrollReveal>
+      </div>
+    </div>
+  );
+};
 
-export default About
+export default About;

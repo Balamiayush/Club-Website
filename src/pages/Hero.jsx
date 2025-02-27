@@ -63,7 +63,7 @@ const Hero = () => {
             <Navbar/>
             <div className="hero-content flex lg:mt-5 flex-col justify-center w-full items-center lg:justify-between lg:flex-row">
                 <h1 className='font-bold text-[3rem] lg:text-[5rem] flex items-center gap-2'>
-                    <span className='text-[#A071FF] bg-[#b4b4b4] rounded-2xl p-2 '>We</span>
+                    <span className='text-[#A071FF] bg-[#EEE8FA] rounded-2xl p-2 '>We</span>
                     <motion.span 
                         ref={headingRef}
                         className='rounded-2xl p-2 inline-block overflow-hidden '
