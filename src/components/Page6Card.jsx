@@ -44,7 +44,7 @@ const data = [
 
 const Page6Card = () => {
   return (
-    <div className="w-full flex flex-col items-center space-y-6 py-10">
+    <div className="w-full flex flex-col cursor-grab items-center space-y-6 py-10">
       {data.map((item, i) => (
         <motion.div
           key={i}
@@ -56,10 +56,10 @@ const Page6Card = () => {
           custom={i}
           whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
         >
-          <div className="text-3xl">{item.icon}</div>
+          <div className="text-3xl bg-gray-500 rounded-full p-2">{item.icon}</div>
           <div>
-            <h3 className="text-xl font-semibold">{item.title}</h3>
-            <p className="text-gray-600">{item.description}</p>
+            <h3 className="text-[1rem] lg:text-[1.5rem] font-semibold ">{item.title}</h3>
+            <p className="text-gray-600 text-[0.8rem] lg:text-[1rem] mt-2">{item.description}</p>
           </div>
         </motion.div>
       ))}

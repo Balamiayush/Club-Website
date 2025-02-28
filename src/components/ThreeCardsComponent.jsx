@@ -18,7 +18,7 @@ const cardVariants = {
 const Card = ({ icon, title, description, index }) => {
   return (
     <motion.div
-      className="bg-white border border-black rounded-xl shadow-sm p-6 w-[300px] h-[220px] flex flex-col items-start justify-center text-left  hover:shadow-lg"
+      className="bg-white border cursor-grab border-black rounded-xl shadow-sm p-6 w-[350px] h-[250px] flex flex-col items-start justify-center text-left  hover:shadow-lg"
       variants={cardVariants}
       initial="hidden"
       whileInView="visible"
@@ -26,11 +26,11 @@ const Card = ({ icon, title, description, index }) => {
       custom={index}
       whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
     >
-      <div className="bg-purple-100 p-3 rounded-full flex items-center justify-center mb-4">
+      <div className=" p-3 bg-gray-500 rounded-full flex items-center justify-center mb-4">
         {icon}
       </div>
-      <h3 className="text-lg font-bold text-gray-900">{title}</h3>
-      <p className="text-gray-600 text-sm mt-2">{description}</p>
+      <h3 className="text-[1rem] lg:text-[1.5rem] font-bold text-gray-900">{title}</h3>
+      <p className="text-gray-600 text-[0.8rem] lg:text-[1rem] mt-2">{description}</p>
     </motion.div>
   );
 };

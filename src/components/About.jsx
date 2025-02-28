@@ -8,7 +8,7 @@ const ScrollReveal = ({
   children,
   scrollContainerRef,
   enableBlur = true,
-  baseOpacity = 0.2,
+  baseOpacity = 1,
   baseRotation = 0.5,
   blurStrength = 4,
   containerClassName = "",
@@ -63,7 +63,7 @@ const ScrollReveal = ({
       {
         ease: 'none',
         opacity: 1,
-        stagger: 0.05,
+        stagger: 1,
         scrollTrigger: {
           trigger: el,
           scroller,
@@ -99,8 +99,10 @@ const ScrollReveal = ({
   }, [scrollContainerRef, enableBlur, baseRotation, baseOpacity, rotationEnd, wordAnimationEnd, blurStrength]);
 
   return (
-    <h2 ref={containerRef} className={`my-2 ${containerClassName} text-center`}>
-      <p className={`text-[clamp(1.6rem,4vw,1rem)] lg:text-[2rem]  leading-[1.5] font-semibold ${textClassName}`}>{splitText}</p>
+    <h2 ref={containerRef} bg- className={`my-2 ${containerClassName} text-center`}>
+      
+        <p className={`text-[clamp(1.1rem,4vw,1rem)]  lg:text-[2rem]  leading-[1.5] font-semibold ${textClassName}`}>{splitText}</p>
+     
     </h2>
   );
 };
@@ -108,7 +110,7 @@ const ScrollReveal = ({
 const About = ({ title, description }) => {
   return (
     <div className='w-full lg:h-[60vh]  px-4 lg:px-10 '>
-      <ScrollReveal textClassName='text-[#A071FF]  p-5 lg:w-70 rounded-lg  text-[0.1rem] lg:text-[2.1rem] font-semibold leading-none bg-[#EEE8FA]'>
+      <ScrollReveal textClassName='text-[#A071FF]  p-5 lg:w-70 rounded-lg  text-[0.1rem] lg:text-[2.1rem] font-semibold leading-none bg-pink-100'>
           {title}
       </ScrollReveal>
       <div style={{

@@ -43,7 +43,13 @@ const FAQItem = ({ question, answer }) => {
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3 }}
         >
-          {isOpen ? <FaTimes /> : <FaPlus />}
+          {isOpen ? <svg width="20" height="20" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.33325 18.0002H17.9999M17.9999 18.0002H34.6666M17.9999 18.0002V1.3335M17.9999 18.0002V34.6668" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+ : <svg width="20" height="20" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.33325 18.0002H17.9999M17.9999 18.0002H34.6666M17.9999 18.0002V1.3335M17.9999 18.0002V34.6668" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+}
         </motion.div>
       </div>
 
@@ -62,11 +68,11 @@ const FAQItem = ({ question, answer }) => {
 
 const FAQ = () => {
   return (
-    <div className="w-full  flex flex-col justify-center items-center mt-10 p-6">
-      <div className="bg-purple-100 text-purple-700 px-4 py-1 rounded-full text-sm lg:text-2xl font-semibold inline-block mb-4">
+    <div className="w-full  flex flex-col justify-center items-center px-6">
+      <div className="bg-purple-100 text-purple-700 px-4 py-1 rounded-full text-[1rem] lg:text-[1.5rem] font-semibold inline-block mb-4">
         FAQ
       </div>
-      <h2 className="text-2xl font-bold">We're here to answer all your questions.</h2>
+      <h2 className="text-[1rem] lg:text-[1.5rem] font-bold">We're here to answer all your questions.</h2>
       <div className="mt-6 border-t border-gray-300">
         {faqs.map((faq, index) => (
           <FAQItem key={index} {...faq} />
