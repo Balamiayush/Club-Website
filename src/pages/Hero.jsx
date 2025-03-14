@@ -78,7 +78,7 @@ const Hero = () => {
                 </div>
             </div>
             <div className="img w-full h-[50vh] lg:h-[90vh] mt-4">
-                <img className='w-full h-full object-cover' src="https://github.com/Balamiayush/Club-Website.git" alt="" />
+                <img className='w-full h-full object-cover' src="https://scontent.fmey1-1.fna.fbcdn.net/v/t39.30808-6/476284638_122133411470534129_2169891444524222368_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=0MhHfJS2iksQ7kNvgHTjdQ-&_nc_oc=Adja2_7roJYjW2jeu1DVpFyhGsK18roC5cH3JZWHs-VRGMb05aSkEQkLa_7Oc55VJXE&_nc_zt=23&_nc_ht=scontent.fmey1-1.fna&_nc_gid=AI5h3sGFYinVt3POqNpZTl2&oh=00_AYG_xYIh41nkJLGyktbMcJkQxUdl22JpUpaWS0y5Bgj1HQ&oe=67D98F1C" alt="" />
             </div>
         </div>
     );
