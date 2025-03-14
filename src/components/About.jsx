@@ -99,18 +99,18 @@ const ScrollReveal = ({
   }, [scrollContainerRef, enableBlur, baseRotation, baseOpacity, rotationEnd, wordAnimationEnd, blurStrength]);
 
   return (
-    <h2 ref={containerRef} bg- className={`my-2 ${containerClassName} text-center`}>
+    <h2 ref={containerRef}  className={`  ${containerClassName} text-center`}>
       
-        <p className={`text-[clamp(1.1rem,4vw,1rem)]  lg:text-[2rem]  leading-[1.5] font-semibold ${textClassName}`}>{splitText}</p>
-     
+        <p className={`text-[clamp(1.1rem,4vw,1rem)]  lg:text-[2rem] font-bold  leading-none  ${textClassName}`}>{splitText}</p>
     </h2>
+     
   );
 };
 
 const About = ({ title, description }) => {
   return (
-    <div className='w-full lg:h-[60vh]  px-4 lg:px-10 '>
-      <ScrollReveal textClassName='text-[#A071FF]  p-5 lg:w-70 rounded-lg  text-[0.1rem] lg:text-[2.1rem] font-semibold leading-none bg-pink-100'>
+    <div className='w-full    px-4 lg:px-10 '>
+      <ScrollReveal textClassName='text-[#A071FF]  p-5 lg:w-70 rounded-lg  text-[0.1rem] lg:text-[48px] font-semibold leading-none bg-pink-100'>
           {title}
       </ScrollReveal>
       <div style={{

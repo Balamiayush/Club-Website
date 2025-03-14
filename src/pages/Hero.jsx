@@ -78,7 +78,7 @@ const Hero = () => {
                 </div>
             </div>
             <div className="img w-full h-[50vh] lg:h-[90vh] mt-4">
-                <img className='w-full h-full object-cover' src="src/assets/hero.jpg" alt="" />
+                <img className='w-full h-full object-cover' src="https://github.com/Balamiayush/Club-Website.git" alt="" />
             </div>
         </div>
     );

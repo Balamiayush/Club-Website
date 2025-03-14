@@ -10,7 +10,6 @@ const Ourteam = () => {
   useEffect(() => {
     setTeam(teamData);
 
-    // Initial animation for the team members when component mounts
     gsap.fromTo(
       ".team-member",
       { opacity: 0, y: 20 },
